@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import UserNotifications
+import SVProgressHUD
+import AFNetworking
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,10 +19,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+       
+        window = UIWindow()
+        window?.backgroundColor = UIColor.white
+        window?.rootViewController = WBMainTabBarViewController()
+        window?.makeKeyAndVisible()
+        
+        // 设置应用程序额外设置
+        setupAddition()
+        
         return true
     }
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -44,3 +57,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+// MARK : - 设置应用程序额外信息
+extension AppDelegate {
+    
+    private func setupAddition() {
+        // 1.设置 SVProgressHUD最小时间
+        SVProgressHUD.setMinimumDismissTimeInterval(1)
+        // 2.设置网络加载指示器
+    AFNetworkActivityIndicatorManager.shared().isEnabled = true
+        // 3.取得用户授权显示通知（上方提示条，声音，badgeNumber）
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.sound, .alert, .carPlay, .badge]) { (success, error) in
+                print("授权" + (success ? "成功" : "失败"))
+            }
+        } else {
+            let notifySetting = UIUserNotificationSettings.init(types: [.alert, .badge, .sound], categories: nil)
+            UIApplication.shared.registerUserNotificationSettings(notifySetting)
+        }
+        
+        // 4.添加帧率监测
+        let fps = YYFPSLabel(frame: CGRect(x: 70, y: 25, width: 80, height: 20))
+        window?.addSubview(fps)
+        
+    }
+    
+}
