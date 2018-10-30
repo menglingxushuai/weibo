@@ -53,13 +53,15 @@ class WBStatusCell: UITableViewCell {
         
         // 如果测试滚动已经很好了 就不需要离屏渲染了
         
+        /*
         // 离屏渲染 - 异步绘制 就是在进入屏幕前就绘制，加载显示更快 随之而来的也更耗cpu
-//        self.layer.drawsAsynchronously = true
+        self.layer.drawsAsynchronously = true
         // 栅格化 - 异步绘制之后，会生成一张独立图像，cell在屏幕上滚动的时候，本质上滚动的是这张图片
         // 停止滚动后可以接受监听
-//        self.layer.shouldRasterize = true
+        self.layer.shouldRasterize = true
         // 使用 ‘栅格化’ 必须注意指定分辨率
-//        self.layer.rasterizationScale = UIScreen.main.scale
+        self.layer.rasterizationScale = UIScreen.main.scale
+         */
         
     }
     

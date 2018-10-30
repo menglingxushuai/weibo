@@ -8,13 +8,32 @@
 
 import UIKit
 
-/// 刷新控件
+
+/// 刷新状态切换的临界点
+private let CGRefreshOffset: CGFloat = 60
+
+
+/// 刷新状态
+///
+/// - Normal: 普通状态
+/// - Pulling: 超过临界点 如果放手开始刷新
+/// - WillRefresh: 用户超过临界点并且放手
+enum LXRefreshState {
+    case Normal
+    case Pulling
+    case WillRefresh
+}
+
+/// 刷新控件 - 负责刷新相关的逻辑处理
 class LXRefreshControl: UIControl {
     
     private weak var scrollView: UIScrollView?
+    /// 刷新视图
+    private lazy var refreshView: LXRefreshView = LXRefreshView.refreshView()
     
     init() {
         super.init(frame: CGRect())
+        
         setupUI()
     }
     
@@ -58,26 +77,92 @@ class LXRefreshControl: UIControl {
             return
         }
         
-        print(sv.contentInset)
-        
-        print(sv.contentOffset)
-        
         let height = -(sv.contentInset.top + sv.contentOffset.y)
+        
+        if height <= 0 {
+            return
+        }
         
         // 根据高度设置刷新控件的frame
         self.frame = CGRect(x: 0, y: -height, width: sv.width, height: height)
+        
+        // 判断临界点
+        if sv.isDragging {
+            if (height > CGRefreshOffset) && (refreshView.refreshState == .Normal) {
+                print("放手更新")
+                refreshView.refreshState = .Pulling
+            } else if (height < CGRefreshOffset) && (refreshView.refreshState == .Pulling){
+                print("再使劲")
+                refreshView.refreshState = .Normal
+            }
+        } else {
+            if refreshView.refreshState == .Pulling {
+                beginRefreshing()
+                
+                // 发送刷新数据的事件
+                sendActions(for: .valueChanged)
+            }
+        }
     }
     
     /// 开始刷新
     func beginRefreshing() {
+        // 判断父视图
+        guard let sv = scrollView else {
+            return
+        }
+        // 判断如果正在刷新 直接返回
+        if refreshView.refreshState == .WillRefresh {
+            return
+        }
+        // 设置刷新视图的状态
+        refreshView.refreshState = .WillRefresh
+        // 让整个刷新视图能够显示出来
+        // 解决方法 - 修改表格的contentInset
+        var inset = sv.contentInset
+        inset.top = inset.top + CGRefreshOffset
+        sv.contentInset = inset
         
+        
+        print("开始刷新")
     }
     /// 结束刷新
     func endRefreshing() {
-        
+        guard let sv = scrollView else {
+            return
+        }
+        // 判断
+        if refreshView.refreshState != .WillRefresh {
+            return
+        }
+        // 恢复表格视图的contentInset
+        var inset = sv.contentInset
+        inset.top = inset.top - CGRefreshOffset
+        sv.contentInset = inset
+        // 恢复状态
+        refreshView.refreshState = .Normal
+
     }
 
+}
+
+extension LXRefreshControl {
+    
     private func setupUI() {
-        backgroundColor = UIColor.orange
+        backgroundColor = superview?.backgroundColor
+        
+        // 添加刷新视图 - 从xib加载出来 默认是xib指定的宽高
+        addSubview(refreshView)
+        
+        // 自动布局 - 设置xib控件的自动布局，需要指定宽高
+    refreshView.translatesAutoresizingMaskIntoConstraints = false
+        
+        addConstraint(NSLayoutConstraint(item: refreshView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0))
+        addConstraint(NSLayoutConstraint(item: refreshView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0))
+        addConstraint(NSLayoutConstraint(item: refreshView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: refreshView.width))
+        addConstraint(NSLayoutConstraint(item: refreshView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: refreshView.height))
+
+
     }
+    
 }

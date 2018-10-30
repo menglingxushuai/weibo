@@ -20,11 +20,11 @@ class WBBaseViewController: UIViewController {
     var visitorInfoDict:[String: String]?
     /// 表格视图 - 如果用户没有登录就不创建
     var tableView: UITableView?
-    var refreshControll: LXRefreshControl?
+    var refreshControl: LXRefreshControl?
     /// 上拉刷新标记
     var isPullUp = false
     
-    lazy var navigationBar = WBBaseNavigationBar.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIApplication.shared.statusBarFrame.height + 44))
+    lazy var navigationBar = WBBaseNavigationBar.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: NAVH))
     
     lazy var navItem = UINavigationItem()
     
@@ -59,7 +59,7 @@ class WBBaseViewController: UIViewController {
     
     /// 加载数据 - 具体实现由子类负责、
     @objc func loadData() {
-        refreshControll?.endRefreshing()
+        refreshControl?.endRefreshing()
     }
     
     override var title: String? {
@@ -86,7 +86,7 @@ extension WBBaseViewController {
     // 可以用dynamic（动态）改为OC方法进行重写 --未尝试
     private func setupUI() {
         view.backgroundColor = UIColor.white
-        
+
         setupNavgationBar()
         
         WBNetworkManager.shared.userLogon ? setupTableView() : setupVisitorView()
@@ -94,22 +94,22 @@ extension WBBaseViewController {
     
     /** 设置表格视图 */
     @objc dynamic func setupTableView() {
-        tableView = UITableView(frame: view.bounds, style: .plain)
+        tableView = UITableView(frame: CGRect(x: 0, y: NAVH, width: view.width, height: view.height - NAVH), style: .plain)
         view.insertSubview(tableView!, belowSubview: navigationBar)
         
         tableView?.delegate = self
         tableView?.dataSource = self
         
         // 设置内容缩进
-        tableView?.contentInset = UIEdgeInsets.init(top:44, left: 0, bottom: 0, right: 0)
+//        tableView?.contentInset = UIEdgeInsets.init(top:44, left: 0, bottom: 0, right: 0)
         // 滚动条 强行解包是为了拿到一个c必有的 inset
         tableView?.scrollIndicatorInsets = tableView!.contentInset
         // 设置刷新控件
-        refreshControll = LXRefreshControl()
-        tableView?.addSubview(refreshControll!)
+        refreshControl = LXRefreshControl()
+        tableView?.addSubview(refreshControl!)
         
         // 添加监听方法
-        refreshControll?.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
     }
     /// 设置访客视图
     private func setupVisitorView() {

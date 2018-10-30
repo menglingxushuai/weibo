@@ -32,4 +32,6 @@ let WBStatusPictureViewInnerMargin = CGFloat(10)
 let WBStatusPictureViewWidth = UIScreen.cz_screenWidth() - 2 * WBStatusPictureViewOutterMagrin
 // 每个Item的宽度
 let WBStatusPictureItemWidth = (WBStatusPictureViewWidth - 2 * WBStatusPictureViewInnerMargin) / 3
+// 导航条高
+let NAVH = 44 + UIApplication.shared.statusBarHeight
 

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="FBR-a5-T2N" customClass="LXMeituanRefreshView" customModule="weibo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="206" height="102"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_building_loading_1" translatesAutoresizingMaskIntoConstraints="NO" id="PlG-pf-WXB">
+                    <rect key="frame" x="20" y="0.0" width="166" height="112"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="PlG-pf-WXB" secondAttribute="height" multiplier="395:267" id="Wah-KM-Y6v"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_earth" translatesAutoresizingMaskIntoConstraints="NO" id="Bva-S9-zvG">
+                    <rect key="frame" x="19.5" y="82" width="167" height="167"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="167" id="teC-gg-gAq"/>
+                        <constraint firstAttribute="width" constant="167" id="umz-5i-QgT"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_small_kangaroo_loading_1" translatesAutoresizingMaskIntoConstraints="NO" id="hdd-Vv-czL">
+                    <rect key="frame" x="77" y="22" width="52" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="N8F-X2-zKp"/>
+                        <constraint firstAttribute="width" secondItem="hdd-Vv-czL" secondAttribute="height" multiplier="61:71" id="bG6-YG-QFk"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Bva-S9-zvG" firstAttribute="top" secondItem="PlG-pf-WXB" secondAttribute="bottom" constant="-30" id="EED-sX-hTx"/>
+                <constraint firstItem="Bva-S9-zvG" firstAttribute="top" secondItem="hdd-Vv-czL" secondAttribute="bottom" id="S4B-Ld-afi"/>
+                <constraint firstAttribute="trailing" secondItem="PlG-pf-WXB" secondAttribute="trailing" constant="20" id="Yj4-hE-N0T"/>
+                <constraint firstItem="Bva-S9-zvG" firstAttribute="centerX" secondItem="FBR-a5-T2N" secondAttribute="centerX" id="dkJ-HI-ASE"/>
+                <constraint firstItem="PlG-pf-WXB" firstAttribute="top" secondItem="FBR-a5-T2N" secondAttribute="top" id="iJW-oy-YVK"/>
+                <constraint firstItem="PlG-pf-WXB" firstAttribute="leading" secondItem="FBR-a5-T2N" secondAttribute="leading" constant="20" id="n8b-AZ-fwe"/>
+                <constraint firstItem="hdd-Vv-czL" firstAttribute="centerX" secondItem="FBR-a5-T2N" secondAttribute="centerX" id="tys-VV-ddI"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="buildingIcon" destination="PlG-pf-WXB" id="KNO-EK-tx8"/>
+                <outlet property="earthIcon" destination="Bva-S9-zvG" id="SC8-Va-L9B"/>
+                <outlet property="kangarooIcon" destination="hdd-Vv-czL" id="JSy-d5-9LH"/>
+            </connections>
+            <point key="canvasLocation" x="75.200000000000003" y="61.169415292353825"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_building_loading_1" width="197" height="133"/>
+        <image name="icon_earth" width="212" height="212"/>
+        <image name="icon_small_kangaroo_loading_1" width="61" height="71"/>
+    </resources>
+</document>
