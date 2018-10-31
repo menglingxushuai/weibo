@@ -123,7 +123,7 @@ extension WBMainTabBarViewController: UITabBarControllerDelegate {
         if selectedIndex == 0 && index == selectedIndex {
             let nav = viewController as! WBMainNavController
             let vc = nav.childViewControllers[0] as! WBHomeViewController
-            vc.tableView?.setContentOffset(CGPoint(x: 0, y: -UIApplication.shared.statusBarFrame.height - 44), animated: true)
+            vc.tableView?.setContentOffset(CGPoint(x: 0, y: -CGRefreshOffset), animated: true)
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
                 vc.loadData()
             }

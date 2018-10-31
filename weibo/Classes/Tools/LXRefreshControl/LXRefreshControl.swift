@@ -9,10 +9,6 @@
 import UIKit
 
 
-/// 刷新状态切换的临界点
-private let CGRefreshOffset: CGFloat = 60
-
-
 /// 刷新状态
 ///
 /// - Normal: 普通状态
@@ -79,12 +75,18 @@ class LXRefreshControl: UIControl {
         
         let height = -(sv.contentInset.top + sv.contentOffset.y)
         
-        if height <= 0 {
+        if height < 0 {
             return
         }
         
         // 根据高度设置刷新控件的frame
         self.frame = CGRect(x: 0, y: -height, width: sv.width, height: height)
+        
+        // --- 传递父视图高度，如果正在刷新中，不传递
+        // --- 把代码放在`最合适`的位置！
+        if refreshView.refreshState != .WillRefresh {
+            refreshView.parentViewHeight = height
+        }
         
         // 判断临界点
         if sv.isDragging {
@@ -120,9 +122,10 @@ class LXRefreshControl: UIControl {
         // 让整个刷新视图能够显示出来
         // 解决方法 - 修改表格的contentInset
         var inset = sv.contentInset
-        inset.top = inset.top + CGRefreshOffset
+        inset.top += CGRefreshOffset
         sv.contentInset = inset
-        
+        // 设置刷新视图父视图的高度
+        refreshView.parentViewHeight = CGRefreshOffset
         
         print("开始刷新")
     }
@@ -137,11 +140,15 @@ class LXRefreshControl: UIControl {
         }
         // 恢复表格视图的contentInset
         var inset = sv.contentInset
-        inset.top = inset.top - CGRefreshOffset
+        inset.top -= CGRefreshOffset
         sv.contentInset = inset
+
+        UIView.animate(withDuration: 0.5) {
+            sv.contentInset = inset
+        }
+        
         // 恢复状态
         refreshView.refreshState = .Normal
-
     }
 
 }

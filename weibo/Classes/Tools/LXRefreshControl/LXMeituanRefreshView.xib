@@ -15,36 +15,19 @@
             <rect key="frame" x="0.0" y="0.0" width="206" height="102"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_building_loading_1" translatesAutoresizingMaskIntoConstraints="NO" id="PlG-pf-WXB">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_building_loading_1" translatesAutoresizingMaskIntoConstraints="NO" id="PlG-pf-WXB">
                     <rect key="frame" x="20" y="0.0" width="166" height="112"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="PlG-pf-WXB" secondAttribute="height" multiplier="395:267" id="Wah-KM-Y6v"/>
-                    </constraints>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_earth" translatesAutoresizingMaskIntoConstraints="NO" id="Bva-S9-zvG">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_earth" translatesAutoresizingMaskIntoConstraints="NO" id="Bva-S9-zvG">
                     <rect key="frame" x="19.5" y="82" width="167" height="167"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="167" id="teC-gg-gAq"/>
-                        <constraint firstAttribute="width" constant="167" id="umz-5i-QgT"/>
-                    </constraints>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_small_kangaroo_loading_1" translatesAutoresizingMaskIntoConstraints="NO" id="hdd-Vv-czL">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_small_kangaroo_loading_1" translatesAutoresizingMaskIntoConstraints="NO" id="hdd-Vv-czL">
                     <rect key="frame" x="77" y="22" width="52" height="60"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="60" id="N8F-X2-zKp"/>
-                        <constraint firstAttribute="width" secondItem="hdd-Vv-czL" secondAttribute="height" multiplier="61:71" id="bG6-YG-QFk"/>
-                    </constraints>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>
-            <constraints>
-                <constraint firstItem="Bva-S9-zvG" firstAttribute="top" secondItem="PlG-pf-WXB" secondAttribute="bottom" constant="-30" id="EED-sX-hTx"/>
-                <constraint firstItem="Bva-S9-zvG" firstAttribute="top" secondItem="hdd-Vv-czL" secondAttribute="bottom" id="S4B-Ld-afi"/>
-                <constraint firstAttribute="trailing" secondItem="PlG-pf-WXB" secondAttribute="trailing" constant="20" id="Yj4-hE-N0T"/>
-                <constraint firstItem="Bva-S9-zvG" firstAttribute="centerX" secondItem="FBR-a5-T2N" secondAttribute="centerX" id="dkJ-HI-ASE"/>
-                <constraint firstItem="PlG-pf-WXB" firstAttribute="top" secondItem="FBR-a5-T2N" secondAttribute="top" id="iJW-oy-YVK"/>
-                <constraint firstItem="PlG-pf-WXB" firstAttribute="leading" secondItem="FBR-a5-T2N" secondAttribute="leading" constant="20" id="n8b-AZ-fwe"/>
-                <constraint firstItem="hdd-Vv-czL" firstAttribute="centerX" secondItem="FBR-a5-T2N" secondAttribute="centerX" id="tys-VV-ddI"/>
-            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="buildingIcon" destination="PlG-pf-WXB" id="KNO-EK-tx8"/>

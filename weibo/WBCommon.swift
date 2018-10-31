@@ -9,8 +9,8 @@
 import Foundation
 
 // MARK : - 应用程序信息
-let WBAppKey = "1437197467"
-let WBAppSecret = "ac5c60952f11d95a7422955fbba4f7d3"
+let WBAppKey = "1280805937"
+let WBAppSecret = "cfb9a2352e4f4266a2eb343b74e594a5"
 let WBRedirectURI = "http://baidu.com"
 
 // MARK : - 全局通知定义
@@ -34,4 +34,8 @@ let WBStatusPictureViewWidth = UIScreen.cz_screenWidth() - 2 * WBStatusPictureVi
 let WBStatusPictureItemWidth = (WBStatusPictureViewWidth - 2 * WBStatusPictureViewInnerMargin) / 3
 // 导航条高
 let NAVH = 44 + UIApplication.shared.statusBarHeight
+
+// MARK: - 刷新空间高度
+/// 刷新状态切换的临界点
+let CGRefreshOffset: CGFloat = 102
 

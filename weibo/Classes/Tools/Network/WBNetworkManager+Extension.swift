@@ -69,9 +69,14 @@ extension WBNetworkManager {
             
             // 加载用户当前信息
             self.loadUserInfo(completion: { (dict) in
-                self.userAccount.yy_modelSet(with: dict)
-                self.userAccount.saveAccount()
-                completion(isSuccees)
+                if dict.count == 0 {
+                    completion(false)
+                } else {
+                    self.userAccount.yy_modelSet(with: dict)
+                    self.userAccount.saveAccount()
+                    completion(isSuccees)
+                }
+                
             })
             
         }

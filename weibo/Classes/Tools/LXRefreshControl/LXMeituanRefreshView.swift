@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class LXMeituanRefreshView: LXRefreshView {
 
     @IBOutlet weak var buildingIcon: UIImageView!
@@ -15,6 +16,19 @@ class LXMeituanRefreshView: LXRefreshView {
     @IBOutlet weak var earthIcon: UIImageView!
     
     @IBOutlet weak var kangarooIcon: UIImageView!
+    
+    override var parentViewHeight: CGFloat {
+        didSet {
+            print("父视图的高度\(parentViewHeight)")
+            var scale: CGFloat
+            if parentViewHeight >= 102 {
+                scale = 1
+            }else{
+                scale = 1 - ((102 - parentViewHeight) / 102)
+            }
+            kangarooIcon.transform = CGAffineTransform(scaleX: scale, y: scale)
+        }
+    }
     
     override func awakeFromNib() {
         // 房子
@@ -30,11 +44,16 @@ class LXMeituanRefreshView: LXRefreshView {
         earthIcon.layer.add(anim, forKey: nil)
         
         // 袋鼠
+        let kImage1 = #imageLiteral(resourceName: "icon_small_kangaroo_loading_1")
+        let kImage2 = #imageLiteral(resourceName: "icon_small_kangaroo_loading_2")
+        kangarooIcon.image = UIImage.animatedImage(with: [kImage1, kImage2], duration: 0.5)
+        
+        // 袋鼠
         // 1->设置锚点
         kangarooIcon.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
         // 2->设置center
         let x = self.width * 0.5
-        let y = self.height - 30
+        let y = self.height - 20
         kangarooIcon.center = CGPoint(x: x, y: y)
         
         kangarooIcon.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)

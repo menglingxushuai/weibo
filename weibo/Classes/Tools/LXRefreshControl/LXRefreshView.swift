@@ -46,6 +46,10 @@ class LXRefreshView: UIView {
             }
         }
     }
+    
+    /// 父视图的高度 - 为了刷新控件不需要关心当前具体的刷新视图具体是谁
+    var parentViewHeight: CGFloat = 0.0
+    
     /// 提示图像
     @IBOutlet weak var tipIcon: UIImageView?
     /// 提示标签
