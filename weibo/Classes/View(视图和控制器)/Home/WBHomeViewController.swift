@@ -26,15 +26,15 @@ class WBHomeViewController: WBBaseViewController {
     /// 加载数据
     override func loadData() {
         
-        refreshControl?.beginRefreshing()
-        
-        listViewModel.loadStatus(pullup: self.isPullUp) { (isSuccess, shouldRefresh) in
-            self.refreshControl?.endRefreshing()
-            self.isPullUp = false
-            if shouldRefresh {
-                self.tableView?.reloadData()
-            }
-        }
+//        refreshControl?.beginRefreshing()
+//        
+//        listViewModel.loadStatus(pullup: self.isPullUp) { (isSuccess, shouldRefresh) in
+//            self.refreshControl?.endRefreshing()
+//            self.isPullUp = false
+//            if shouldRefresh {
+//                self.tableView?.reloadData()
+//            }
+//        }
     }
     
 }

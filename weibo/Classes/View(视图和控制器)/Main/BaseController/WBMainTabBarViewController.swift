@@ -67,16 +67,27 @@ class WBMainTabBarViewController: UITabBarController {
         return .portrait
     }
     
-    // FIXME:没有实现
+    // 撰写微博
     @objc private func composeBtnClick() {
-        print("撰写微博")
-        
-        // 测试方向旋转
-        let vc = UIViewController()
-        vc.view.backgroundColor = UIColor.randomColor
-        let nav = UINavigationController.init(rootViewController: vc)
-        
-        present(nav, animated: true, completion: nil)
+        // 1> 判断是否登录
+        // 2> 实例化视图
+        let v = WBComposeTypeView.composeTypeView()
+        // 3> 显示视图 -> 注意闭包的循环引用
+        v.show { [weak v] (clsName) in
+            guard
+            let clsName = clsName,
+            let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? UIViewController.Type else {
+                v?.removeFromSuperview()
+                return
+            }
+            
+            let vc = cls.init()
+            let nav = UINavigationController(rootViewController: vc)
+            self.present(nav, animated: true, completion: {
+                v?.removeFromSuperview()
+            })
+            
+        }
     }
 
 }

@@ -48,11 +48,16 @@
 		4F454BFD21871EC8000C992A /* LXHumanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F454BFC21871EC8000C992A /* LXHumanRefreshView.xib */; };
 		4F454BFF21872238000C992A /* LXMeituanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F454BFE21872238000C992A /* LXMeituanRefreshView.xib */; };
 		4F454C01218724C4000C992A /* LXMeituanRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F454C00218724C4000C992A /* LXMeituanRefreshView.swift */; };
+		4F4AFFD1218ACA3A0092C713 /* WBComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4AFFD0218ACA3A0092C713 /* WBComposeViewController.swift */; };
 		4F901B17214B49EC008CE411 /* WBBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F901B16214B49EC008CE411 /* WBBaseViewController.swift */; };
 		4F901B19214B4A31008CE411 /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F901B18214B4A31008CE411 /* WBMessageViewController.swift */; };
 		4F901B1B214B4A7A008CE411 /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F901B1A214B4A7A008CE411 /* WBDiscoverViewController.swift */; };
 		4F901B1D214B4A98008CE411 /* WBProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F901B1C214B4A98008CE411 /* WBProfileViewController.swift */; };
 		4F901B20214B9B49008CE411 /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F901B1F214B9B49008CE411 /* WBDemoViewController.swift */; };
+		4F92B5DD21897AAF00A2DF96 /* WBComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F92B5DC21897AAF00A2DF96 /* WBComposeTypeView.swift */; };
+		4F92B5DF21897CFE00A2DF96 /* WBComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F92B5DE21897CFE00A2DF96 /* WBComposeTypeView.xib */; };
+		4F92B5E121898BF000A2DF96 /* WBComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F92B5E021898BF000A2DF96 /* WBComposeTypeButton.swift */; };
+		4F92B5E321898C4500A2DF96 /* WBComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F92B5E221898C4500A2DF96 /* WBComposeTypeButton.xib */; };
 		4FA335DA2148BDF800DDBA60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA335D92148BDF800DDBA60 /* AppDelegate.swift */; };
 		4FA335DF2148BDF800DDBA60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FA335DD2148BDF800DDBA60 /* Main.storyboard */; };
 		4FA335E12148BDF800DDBA60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FA335E02148BDF800DDBA60 /* Assets.xcassets */; };
@@ -111,11 +116,16 @@
 		4F454BFC21871EC8000C992A /* LXHumanRefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LXHumanRefreshView.xib; sourceTree = "<group>"; };
 		4F454BFE21872238000C992A /* LXMeituanRefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LXMeituanRefreshView.xib; sourceTree = "<group>"; };
 		4F454C00218724C4000C992A /* LXMeituanRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LXMeituanRefreshView.swift; sourceTree = "<group>"; };
+		4F4AFFD0218ACA3A0092C713 /* WBComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBComposeViewController.swift; sourceTree = "<group>"; };
 		4F901B16214B49EC008CE411 /* WBBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBBaseViewController.swift; sourceTree = "<group>"; };
 		4F901B18214B4A31008CE411 /* WBMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMessageViewController.swift; sourceTree = "<group>"; };
 		4F901B1A214B4A7A008CE411 /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
 		4F901B1C214B4A98008CE411 /* WBProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBProfileViewController.swift; sourceTree = "<group>"; };
 		4F901B1F214B9B49008CE411 /* WBDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
+		4F92B5DC21897AAF00A2DF96 /* WBComposeTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBComposeTypeView.swift; sourceTree = "<group>"; };
+		4F92B5DE21897CFE00A2DF96 /* WBComposeTypeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBComposeTypeView.xib; sourceTree = "<group>"; };
+		4F92B5E021898BF000A2DF96 /* WBComposeTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBComposeTypeButton.swift; sourceTree = "<group>"; };
+		4F92B5E221898C4500A2DF96 /* WBComposeTypeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBComposeTypeButton.xib; sourceTree = "<group>"; };
 		4FA335D62148BDF700DDBA60 /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FA335D92148BDF800DDBA60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FA335DE2148BDF800DDBA60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -298,6 +308,26 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
+		4F92B5DA21897A4A00A2DF96 /* Compose(撰写微博) */ = {
+			isa = PBXGroup;
+			children = (
+				4F92B5DB21897A5D00A2DF96 /* ComposeType */,
+				4F4AFFD0218ACA3A0092C713 /* WBComposeViewController.swift */,
+			);
+			path = "Compose(撰写微博)";
+			sourceTree = "<group>";
+		};
+		4F92B5DB21897A5D00A2DF96 /* ComposeType */ = {
+			isa = PBXGroup;
+			children = (
+				4F92B5DC21897AAF00A2DF96 /* WBComposeTypeView.swift */,
+				4F92B5DE21897CFE00A2DF96 /* WBComposeTypeView.xib */,
+				4F92B5E021898BF000A2DF96 /* WBComposeTypeButton.swift */,
+				4F92B5E221898C4500A2DF96 /* WBComposeTypeButton.xib */,
+			);
+			path = ComposeType;
+			sourceTree = "<group>";
+		};
 		4FA335CD2148BDF700DDBA60 = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +375,7 @@
 		4FA336142148F5E700DDBA60 /* View(视图和控制器) */ = {
 			isa = PBXGroup;
 			children = (
+				4F92B5DA21897A4A00A2DF96 /* Compose(撰写微博) */,
 				4FA336152148F5E700DDBA60 /* Home */,
 				4FA336162148F5E700DDBA60 /* Discover */,
 				4FA336172148F5E700DDBA60 /* Message */,
@@ -494,8 +525,10 @@
 				31853D0C217ED737002E11C6 /* WBStatusNormalCell.xib in Resources */,
 				31C6FE1C217DBCB9005B2E7C /* WBWelcomeView.xib in Resources */,
 				4FA335E12148BDF800DDBA60 /* Assets.xcassets in Resources */,
+				4F92B5E321898C4500A2DF96 /* WBComposeTypeButton.xib in Resources */,
 				313A776D2174784A00851E82 /* main.json in Resources */,
 				4F454BFF21872238000C992A /* LXMeituanRefreshView.xib in Resources */,
+				4F92B5DF21897CFE00A2DF96 /* WBComposeTypeView.xib in Resources */,
 				4F454BFD21871EC8000C992A /* LXHumanRefreshView.xib in Resources */,
 				4F15AFED21815745009C19AD /* WBStatusRetweetedCell.xib in Resources */,
 				4FA335DF2148BDF800DDBA60 /* Main.storyboard in Resources */,
@@ -571,11 +604,13 @@
 				314879432171C81C0030EF87 /* WBBaseVisitorView.swift in Sources */,
 				4F901B17214B49EC008CE411 /* WBBaseViewController.swift in Sources */,
 				318C80C42179C0E3007C0A90 /* WBUserAccount.swift in Sources */,
+				4F4AFFD1218ACA3A0092C713 /* WBComposeViewController.swift in Sources */,
 				314879462171DB130030EF87 /* UILabel+MGAddition.m in Sources */,
 				4FA3361E2148F6B000DDBA60 /* WBMainTabBarViewController.swift in Sources */,
 				31C6FE18217DA4ED005B2E7C /* WBWelcomeView.swift in Sources */,
 				4F454C01218724C4000C992A /* LXMeituanRefreshView.swift in Sources */,
 				31853D0E217EE77B002E11C6 /* WBUser.swift in Sources */,
+				4F92B5DD21897AAF00A2DF96 /* WBComposeTypeView.swift in Sources */,
 				31853D15217F05E9002E11C6 /* UIImageView+Kingfisher.swift in Sources */,
 				4F901B1B214B4A7A008CE411 /* WBDiscoverViewController.swift in Sources */,
 				31853D1F217F349C002E11C6 /* UIScreen+CZAddition.m in Sources */,
@@ -586,6 +621,7 @@
 				318C80C72179D34F007C0A90 /* NSString+CZPath.m in Sources */,
 				4F901B19214B4A31008CE411 /* WBMessageViewController.swift in Sources */,
 				31A8D95D2178875F0014A843 /* WBCommon.swift in Sources */,
+				4F92B5E121898BF000A2DF96 /* WBComposeTypeButton.swift in Sources */,
 				4F26CA392182F8D500A1AF91 /* LXRefreshControl.swift in Sources */,
 				3108511F2175DB9F00AF0574 /* WBNetworkManager+Extension.swift in Sources */,
 				3108511D2175C37900AF0574 /* WBNetworkManager.swift in Sources */,

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WBComposeTypeView" customModule="weibo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="344" height="573"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Az8-cO-2qC">
+                    <rect key="frame" x="0.0" y="0.0" width="344" height="573"/>
+                    <view key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LzM-hv-QWX">
+                        <rect key="frame" x="0.0" y="0.0" width="344" height="573"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compose_slogan" translatesAutoresizingMaskIntoConstraints="NO" id="1Gt-rk-Zb1">
+                                <rect key="frame" x="95" y="100" width="154" height="48"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q3p-hp-cDg">
+                                <rect key="frame" x="0.0" y="529" width="344" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVc-uV-J0v" userLabel="关闭按钮">
+                                        <rect key="frame" x="159.5" y="9.5" width="25" height="25"/>
+                                        <state key="normal" image="tabbar_compose_background_icon_close"/>
+                                        <connections>
+                                            <action selector="close:" destination="iN0-l3-epB" eventType="touchUpInside" id="MmB-j2-Qx3"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0C-sD-DfU">
+                                        <rect key="frame" x="159.5" y="9.5" width="25" height="25"/>
+                                        <state key="normal" image="tabbar_compose_background_icon_return"/>
+                                        <connections>
+                                            <action selector="returnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="WCS-53-xHa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="9bI-xP-Qau"/>
+                                    <constraint firstItem="U0C-sD-DfU" firstAttribute="centerX" secondItem="Q3p-hp-cDg" secondAttribute="centerX" id="BcI-Ri-iHp"/>
+                                    <constraint firstItem="RVc-uV-J0v" firstAttribute="centerX" secondItem="Q3p-hp-cDg" secondAttribute="centerX" id="XNP-q0-L4D"/>
+                                    <constraint firstItem="U0C-sD-DfU" firstAttribute="centerY" secondItem="Q3p-hp-cDg" secondAttribute="centerY" id="gVb-6Q-dW3"/>
+                                    <constraint firstItem="RVc-uV-J0v" firstAttribute="centerY" secondItem="Q3p-hp-cDg" secondAttribute="centerY" id="hBT-pi-wbz"/>
+                                </constraints>
+                            </view>
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="36R-Rj-a8m">
+                                <rect key="frame" x="0.0" y="249" width="344" height="224"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="224" id="F7i-rI-shp"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="1Gt-rk-Zb1" firstAttribute="top" secondItem="LzM-hv-QWX" secondAttribute="top" constant="100" id="1Tc-gD-9xq"/>
+                            <constraint firstAttribute="trailing" secondItem="36R-Rj-a8m" secondAttribute="trailing" id="Hw7-8M-BRk"/>
+                            <constraint firstAttribute="trailing" secondItem="Q3p-hp-cDg" secondAttribute="trailing" id="bPt-L9-lju"/>
+                            <constraint firstItem="36R-Rj-a8m" firstAttribute="leading" secondItem="LzM-hv-QWX" secondAttribute="leading" id="fw8-2k-pxQ"/>
+                            <constraint firstItem="Q3p-hp-cDg" firstAttribute="top" secondItem="36R-Rj-a8m" secondAttribute="bottom" constant="56" id="fx9-Ln-6eZ"/>
+                            <constraint firstAttribute="bottom" secondItem="Q3p-hp-cDg" secondAttribute="bottom" id="gW9-LZ-qdE"/>
+                            <constraint firstItem="Q3p-hp-cDg" firstAttribute="leading" secondItem="LzM-hv-QWX" secondAttribute="leading" id="kpg-8m-2SQ"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="extraLight"/>
+                </visualEffectView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Az8-cO-2qC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6HA-ni-9Fg"/>
+                <constraint firstItem="Az8-cO-2qC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UdC-ao-mbg"/>
+                <constraint firstItem="1Gt-rk-Zb1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="byi-2N-cKY"/>
+                <constraint firstAttribute="trailing" secondItem="Az8-cO-2qC" secondAttribute="trailing" id="fjx-cS-blR"/>
+                <constraint firstAttribute="bottom" secondItem="Az8-cO-2qC" secondAttribute="bottom" id="qCG-zq-H9F"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="closeCenterX" destination="XNP-q0-L4D" id="VhN-JG-cwY"/>
+                <outlet property="returnButton" destination="U0C-sD-DfU" id="k31-87-DwP"/>
+                <outlet property="returnCenterX" destination="BcI-Ri-iHp" id="9HS-U4-8UV"/>
+                <outlet property="scrollView" destination="36R-Rj-a8m" id="Yyw-uT-DOX"/>
+            </connections>
+            <point key="canvasLocation" x="49.600000000000001" y="-5.8470764617691158"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="compose_slogan" width="154" height="48"/>
+        <image name="tabbar_compose_background_icon_close" width="25" height="25"/>
+        <image name="tabbar_compose_background_icon_return" width="25" height="25"/>
+    </resources>
+</document>
